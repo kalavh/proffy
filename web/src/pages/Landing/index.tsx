@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css'
 
+import {Link} from 'react-router-dom'
+
 import logoSvg from '../../assets/images/logo.svg'
 import heroSvg from '../../assets/images/landing.svg'
 import studyIcon from '../../assets/images/icons/study.svg'
@@ -21,15 +23,15 @@ function Landing () {
                 
                 <div className="buttons-container">
                     
-                    <a href="/study" className="study">
+                    <Link to="/study" className="study">
                        <img src={studyIcon} alt="study Icon" />
                        Study
-                   </a>
+                   </Link>
 
-                    <a href="/give-classes" className="give-classes">
+                    <Link to="/give-classes" className="give-classes">
                        <img src={giveClassesIcon} alt="study Icon" />
                        Teach
-                    </a>
+                    </Link>
               
                 </div>
 
