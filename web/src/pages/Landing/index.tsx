@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css'
 
 import logoSvg from '../../assets/images/logo.svg'
 import heroSvg from '../../assets/images/landing.svg'
@@ -14,23 +15,24 @@ function Landing () {
                     <img src={logoSvg} alt="Proffy Logo" />
                     <h2> Your Study Website</h2>
                 </div>
+
                 <img
-                 src={heroSvg} 
-                 alt="Image plataform" 
-                 className="hero-image"
-                />
+                 src={heroSvg}  alt="Image plataform" className="hero-image"/>
+                
                 <div className="buttons-container">
-                    <a href="" className="buttons-container">
+                    
+                    <a href="" className="study">
                        <img src={studyIcon} alt="study Icon" />
                        Study
-                    </a>
+                   </a>
 
                     <a href="" className="give-classes">
                        <img src={giveClassesIcon} alt="study Icon" />
-                       Study
+                       Teach
                     </a>
-                    <a href="" className="study"> </a>
+              
                 </div>
+
                 <span className="total-connections">
                     more than 200 connections 
                     <img src={purpleHeartIcon} alt="purple heart"/>
