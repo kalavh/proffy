@@ -43,9 +43,9 @@
 
 #search-teachers  .input-block:focus-within::after input{
 
-    width: calc(100% - 34.2rem);
+    width: calc(100% - 3.2rem);
     height: 2px;
-    content: ' ';
+    content: '';
     background: var(--color-primary-light);
     position: absolute;
     left: 1.6rem;
@@ -60,7 +60,7 @@
 
     #search-teachers {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap:16px ;
         position: absolute;
         bottom: -44px;
