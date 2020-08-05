@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './styles.css'
 import PageHeader from '../../components/PageHeader';
@@ -12,14 +11,14 @@ function TeacherList() {
             <PageHeader title="They are our Teacther">
                <form id="search-teachers">
                     <div className="input-block">
-                        <label htmlFor="subject">subjects</label>
-                        <input type="text" id="subject"/>
+                        <label id="lsubject" htmlFor="subject">subjects</label>
+                        <input type="text"  placeholder="Subject" id="subject"/>
 
-                        <label htmlFor="week_day">Week Day</label>
-                        <input type="text" id="week_day"/>
+                        <label id="lweek_day" htmlFor="week_day">Week Day</label>
+                        <input type="text"  placeholder="Week Day" id="week_day"/>
 
-                        <label htmlFor="time">time</label>
-                        <input type="text" id="time"/>
+                        <label id="ltime" htmlFor="time">time</label>
+                        <input type="text"  placeholder="Time" id="time"/>
                     </div>
                </form>
             </PageHeader>
