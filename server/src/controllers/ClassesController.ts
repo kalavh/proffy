@@ -25,7 +25,10 @@ export default class ClassesController{
 
         const timeInMinutes = convertHourToMinutes(time);
 
-       const classes = await db('classes').where('classes.subject' , '=' , subject);
+       const classes = await db('classes')
+       .where('classes.subject' , '=' , subject)
+       .join('users','classes.user_id','=','users.id')
+       .select(['classes.*','users.*']);
 
 
         
@@ -54,7 +57,7 @@ export default class ClassesController{
                 avatar,
                 whatsapp,
                 bio,
-             }); 
+             });
         
             const user_id = insertedUsersIds[0]
         
@@ -85,7 +88,6 @@ export default class ClassesController{
             return res.status(400).json({
                 error: 'Unexpected erro while create new class'
             })
-    
         }
     }
 }
