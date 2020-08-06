@@ -38,8 +38,6 @@ export default class ClassesController{
        .join('users','classes.user_id','=','users.id')
        .select(['classes.*','users.*']);
 
-
-        
             console.log(timeInMinutes);
             return res.json(classes);
         
