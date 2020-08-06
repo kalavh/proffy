@@ -23,8 +23,9 @@ routes.post("/classes", async (req,res) => {
     cost,
     schedule} = req.body
    
+    const trx = await db.transaction()
     
-    const insertedUsersIds = await db('users').insert({
+    const insertedUsersIds = await trx('users').insert({
         name,
         avatar,
         whatsapp,
@@ -33,7 +34,7 @@ routes.post("/classes", async (req,res) => {
 
     const user_id = insertedUsersIds[0]
 
-   const insertedClassesIds = await db('classes').insert({
+   const insertedClassesIds = await trx('classes').insert({
         subject,
         cost,
         user_id,
@@ -51,7 +52,7 @@ routes.post("/classes", async (req,res) => {
         };
     })
 
-    await db('class_schedule').insert(classSchedule)
+    await trx('class_schedule').insert(classSchedule)
     return res.send("Ok"); 
 } )
 
