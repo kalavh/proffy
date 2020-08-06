@@ -2,7 +2,7 @@ import Knex from 'knex';
 
 
 export async function up(knex: Knex) {
-    return knex.schema.createTable('class_schedule', table=> {
+    return knex.schema.createTable('connection', table=> {
         table.increments('id').primary();
 
         table.integer('user_id')
@@ -20,5 +20,5 @@ export async function up(knex: Knex) {
 
 
 export async function down(knex: Knex) {
-    return knex.schema.dropTable('class_schedule');
+    return knex.schema.dropTable('connection');
 }
