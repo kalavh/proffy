@@ -1,6 +1,7 @@
 import {Request , Response, response} from 'express'
 import db from '../database/connection';
 import convertHourToMinutes from '../utils/convertHourToMinutes';
+
 interface scheduleItem{
     week_day: number;
     from: string;
@@ -13,14 +14,23 @@ export default class ClassesController{
     async index(req: Request, res : Response){
         const filters = req.query;
 
+        const subject = filters.subject as string;
+        const week_day = filters.week_day as string;
+        const time = filters.time as string;
+
         if(!filters.week_day || !filters.subject || !filters.time){
-            return res.status(400).json( { error:" missing filters to search classes"})
-        }
+            return res.status(400).json({
+                error: "missing filters to search classes" })
+        };
 
-        const timeInMinutes = convertHourToMinutes(filters.time as string);
+        const timeInMinutes = convertHourToMinutes(time);
 
-            console.log(timeInMinutes)
-            return response.send();
+       const classes = await db('classes').where('classes.subject' , '=' , subject);
+
+
+        
+            console.log(timeInMinutes);
+            return res.json(classes);
         
     }
 
