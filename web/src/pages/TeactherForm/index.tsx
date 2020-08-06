@@ -1,6 +1,8 @@
 import React from 'react'
 import PageHeader from '../../components/PageHeader'
 
+import  './styles.css'
+
 function TeatcherForm() {
     return (
         <div id="page-teacher-form" className="container">
