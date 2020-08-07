@@ -13,7 +13,7 @@ function TeacherList() {
                <form id="search-teachers">
                  <Input name="subject" label="subject" />
                  <Input name="week_day" label="week day"/>
-                 <Input name="time" label="time"/>
+                 <Input type="time"name="time" label="time"/>
                </form>
             </PageHeader>
         <main>
