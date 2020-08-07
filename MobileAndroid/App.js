@@ -17,7 +17,7 @@ import {
 const App: () => React$Node = () => {
   return (
     <>
-      <Text> Hello world</Text>
+      <Text> Hello world 2 teste blank app</Text>
     </>
   );
 };
