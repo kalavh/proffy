@@ -26,6 +26,7 @@ function TeatcherForm() {
                  <Input name="cost" label="cost"/>
             </fieldset>
 
+            <textarea/>
 
         <footer>
             <p>
