@@ -1,0 +1,10 @@
+diff a/web/src/pages/Landing/index.tsx b/web/src/pages/Landing/index.tsx	(rejected hunks)
+@@ -36,7 +36,7 @@
+                 </div>
+ 
+                 <span className="total-connections">
+-                    more than 200 connections 
++                    more than 345 connections 
+                     <img src={purpleHeartIcon} alt="purple heart"/>
+                 </span>
+             </div>
