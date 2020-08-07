@@ -15,7 +15,6 @@ const Select: React.FC<SelectProps> = ({label,name, ...rest}) => {
             <label id="lsubject" htmlFor={name}> {label}</label>
             <select id={name} {...rest}/>
         </div>
-
     )
 }
 
