@@ -1,6 +1,7 @@
 import React from 'react'
 import PageHeader from '../../components/PageHeader'
 import warningIcon from '../../assets/images/icons/warning.svg'
+import Select from '../../components/Select'
 
 import  './styles.css'
 import Input from '../../components/Input'
@@ -22,7 +23,8 @@ function TeatcherForm() {
 
             <fieldset>
                 <legend> About Classes </legend>
-                 <Input name="subject" label="subject" />
+            
+                 <Select name="subject" label="subject" />
                  <Input name="cost" label="cost"/>
             </fieldset>
 
