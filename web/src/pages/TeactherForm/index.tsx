@@ -2,28 +2,20 @@ import React from 'react'
 import PageHeader from '../../components/PageHeader'
 
 import  './styles.css'
+import Input from '../../components/Input'
 
 function TeatcherForm() {
     return (
         <div id="page-teacher-form" className="container">
         <PageHeader title="Thank you for teach people"
         description="Register on Proffy"/>
-
+        
         <main>
             <fieldset>
                 <legend> Your data</legend>
-                    <div className="input-block">
-                        <label htmlFor="name">Full Name</label>
-                        <input type="text"  placeholder="name" id="name"/>
-                    </div>
-                    <div className="input-block">
-                        <label htmlFor="avatar">Avatar Link</label>
-                        <input type="text"  placeholder="avatar" id="avatar"/>
-                    </div>
-                    <div className="input-block">
-                        <label htmlFor="whatsapp">whatsapp</label>
-                        <input type="text"  placeholder="whatsapp" id="whatsapp"/>
-                    </div>
+                 <Input name="name" label="name" />
+                 <Input name="avatar" label="avatar"/>
+                 <Input name="whatsapp" label="whatsapp"/>
                     
             </fieldset>
         </main>
