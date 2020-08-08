@@ -13,7 +13,7 @@ const Select: React.FC<SelectProps> = ({label,name, ...rest}) => {
 
         <div className="select-block">
             <label id="lsubject" htmlFor={name}> {label}</label>
-            <select id={name} {...rest}/>
+            <select id="select" {...rest}/>
         </div>
     )
 }
