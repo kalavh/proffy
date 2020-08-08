@@ -45,6 +45,13 @@ const styles = StyleSheet.create({
     buttonText:{
         color: '#fff',
         fontSize: 20,
+    },
+    totalConnections : {
+        color: '#d4c2ff',
+        fontSize: 12,
+        lineHeight:20,
+        maxWidth:140,
+        marginTop:40,
     }
 
 

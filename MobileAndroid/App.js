@@ -12,6 +12,7 @@ const App: () => React$Node = () => {
   return (
     <>
       <Landing/>
+      <StatusBar style="light"/>
     </>
   );
 };
