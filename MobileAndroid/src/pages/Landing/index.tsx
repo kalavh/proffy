@@ -1,6 +1,6 @@
 import React from 'react'
 import {View,Text,Image} from 'react-native'
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, NavigationHelpersContext} from '@react-navigation/native';
 
 import LandingImg from '../../images/landing.png';
 import studyIcon from '../../images/icons/study.png';
@@ -10,6 +10,10 @@ import styles from './styles';
 import { RectButton } from 'react-native-gesture-handler'
 
 
+
+
+
+
 function Landing() {
     const navigation = useNavigation();
 
@@ -17,15 +21,21 @@ function Landing() {
         navigation.navigate('GiveClasses');
     }
 
+    function heandleNavigateToStudyPages() {
+        navigation.navigate('Study');
+    }
     return (
         <View style={styles.container}>
-            <Image style={styles.banner} source={LandingImg} />
-        <Text style= {styles.title}> Welcome {'\n'}
-        <Text style= {styles.titleBold}>The app to improve your knowledge</Text> 
-         </Text>
+        <Image style={styles.banner} source={LandingImg} />
+
+        <Text style= {styles.title}>Welcome {'\n'}
+            <Text style= {styles.titleBold}>
+            The app to improve your knowledge</Text> 
+        </Text>
 
          <View style={styles.buttonsContainer}>
             <RectButton 
+             onPress={heandleNavigateToStudyPages}
              style={[ styles.button,styles.buttonPrimary]}>
                     <Image source={studyIcon} /> 
                     <Text style={styles.buttonText}> Study </Text>
@@ -35,7 +45,7 @@ function Landing() {
             onPress={handleNavigateToGiveClassesPages}
              style={[ styles.button,styles.buttonSecondary]}>
                     <Image source={giveClassesIcon} /> 
-                    <Text style={styles.buttonText}> Give Classes </Text>
+                    <Text style={styles.buttonText}>GiveClasses</Text>
             </RectButton>
 
          </View>
