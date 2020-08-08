@@ -130,6 +130,7 @@
 
     #page-teacher-form main fieldset {
         padding: 1rem;
+        margin-top: 1rem;
     }
 
     #page-teacher-form main footer {
@@ -144,6 +145,11 @@
     #page-teacher-form main footer button{
         width: 20rem;
         margin-top: 0;
+    }
+    #cost {
+        width: 78%;
+        
+        margin-top: 2rem;
     }
 
    }

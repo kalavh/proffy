@@ -35,7 +35,7 @@ function TeatcherForm() {
                      
 
                  ]} />
-                 <Input name="cost" label="cost"/>
+                 <Input name="cost" label="cost(Hour)"/>
 
                  <fieldset>
                      <legend> Hours
