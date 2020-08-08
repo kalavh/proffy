@@ -6,6 +6,7 @@ import styles from './styles'
 
 import backIcon from '../../images/icons/back.png'
 import logoImg from '../../images/logo.png'
+import { useNavigation } from '@react-navigation/native';
 
 interface pageHeaderProps{
     title: string,
@@ -14,13 +15,15 @@ interface pageHeaderProps{
 
 const PageHeader:React.FC<pageHeaderProps> = ({title}) => {
     
+    const { navigate } = useNavigation();
+
     function handleGoBack() {
-        console.log(1)
+        navigate('Landing');
     }
     return (
     <View style={styles.container}>
        <View style={styles.topBar}>
-            <BorderlessButton onPress={PageHeader}>
+            <BorderlessButton onPress={handleGoBack}>
                 <Image source={backIcon} resizeMode="contain"/>
             </BorderlessButton>
 
