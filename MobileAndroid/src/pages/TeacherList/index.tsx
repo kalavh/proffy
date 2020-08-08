@@ -1,10 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
+import styles from './styles'
 
 function TeatcherList() {
     return (
-    <View>
-        <Text> teste </Text>
+    <View style={styles.container}>
+   
     </View>)
 }
 
