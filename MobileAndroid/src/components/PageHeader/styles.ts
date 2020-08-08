@@ -6,6 +6,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#8257e5'
 
     },
+
+    topBar: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+
+    },
+    title:{
+        fontSize: 24,
+        lineHeight: 32,
+        maxWidth: 160,
+        marginVertical: 40,
+        color: '#fff'
+
+
+    },
+
 })
 
 export default styles

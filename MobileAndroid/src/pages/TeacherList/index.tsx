@@ -6,7 +6,7 @@ import PageHeader from '../../components/PageHeader';
 function TeatcherList() {
     return (
     <View style={styles.container}>
-        <PageHeader/>
+        <PageHeader title="Teatchers"/>
     </View>)
 }
 

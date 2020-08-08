@@ -44,7 +44,7 @@ function StudyTabs() {
            
             <Screen 
             name="Favorites"  
-            component={Favorites}
+            component={TeacherList}
             options={{
                 tabBarLabel: 'Proffys',
                 tabBarIcon: ({color,size}) => {
@@ -56,7 +56,7 @@ function StudyTabs() {
             }} />
 
             <Screen name="TeacherList" 
-            component={TeacherList}
+            component={Favorites}
             options={{
                 tabBarLabel: 'Favorites',
                 tabBarIcon: ({color,size}) => {
