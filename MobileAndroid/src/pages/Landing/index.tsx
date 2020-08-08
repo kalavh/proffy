@@ -7,7 +7,8 @@ import styles from './styles';
 function Landing() {
     return (
         <View style={styles.container}>
-            <Image source={LandingImg} />
+            <Image style={styles.banner} source={LandingImg} />
+        <Text style= {styles.title}> Welcome {'\n'} The app to improve your knowledge </Text>
         </View>
 
     )
