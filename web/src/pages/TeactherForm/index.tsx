@@ -8,7 +8,7 @@ import Input from '../../components/Input'
 
 function TeatcherForm() {
     const [scheduleItems, setScheduleItems ] = useState([
-        {week_day: 0 , from: '8:00 AM', to: '4:00 PM'}
+        {week_day: 0 , from: '', to: ''}
     ]);
   
 
