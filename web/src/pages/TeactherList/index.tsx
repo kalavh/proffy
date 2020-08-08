@@ -12,19 +12,19 @@ function TeacherList() {
         <div id="page-teacher-list" className="container">
             <PageHeader title="They are our Teacther">
                <form id="search-teachers">
-               <Select name="subject" label="subject"
-                 options={[
-                     { value: 'Art'      , label: 'Art'       },
-                     { value: 'Biology'  , label: 'Biology'   },
-                     { value: 'Chemistry', label: 'Chemistry' },
-                     { value: 'English'  , label: 'English'   },
-                     { value: 'History'  , label: 'History'   },
-                     { value: 'Math'     , label: 'Math'      }
-                     
+                <Select name="subject" label="subject"
+                    options={[
+                        { value: 'Art'      , label: 'Art'       },
+                        { value: 'Biology'  , label: 'Biology'   },
+                        { value: 'Chemistry', label: 'Chemistry' },
+                        { value: 'English'  , label: 'English'   },
+                        { value: 'History'  , label: 'History'   },
+                        { value: 'Math'     , label: 'Math'      }
+                        
 
-                 ]} />
-                 <Input name="week_day" label="week day"/>
-                 <Input type="time"name="time" label="time"/>
+                    ]} />
+                    <Input name="week_day" label="week day"/>
+                    <Input type="time"name="time" label="time"/>
                </form>
             </PageHeader>
         <main>
