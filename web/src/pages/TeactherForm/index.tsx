@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PageHeader from '../../components/PageHeader'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import Select from '../../components/Select'
@@ -7,13 +7,17 @@ import  './styles.css'
 import Input from '../../components/Input'
 
 function TeatcherForm() {
-    const scheduleItems = [
-        {week_day:0 , from: '8:00 AM', to: '4:00 PM'}
-    ]
+    const [scheduleItems, setScheduleItems ] = useState([
+        {week_day: 0 , from: '8:00 AM', to: '4:00 PM'}
+    ]);
+  
 
     function addNewScheduleItem() {
-            console.log('teste')
-    }
+        setScheduleItems([
+            ...scheduleItems,
+            { week_day: 0, from: '', to:'' }]
+            )
+    } 
     
         return (
         <div id="page-teacher-form" className="container">
