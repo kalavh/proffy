@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
         lineHeight: 30,
         marginTop: 80,
     },
+    titleBold: {
+        fontWeight: 'bold',
+    },
 })
 
 export default styles
