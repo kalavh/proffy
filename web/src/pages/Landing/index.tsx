@@ -16,7 +16,11 @@ function Landing () {
          
     useEffect(()=>{
         api.get('/connections')
-        .then(res => { console.log(res) })
+        .then(res => { 
+            const {total} = res.data;
+
+            setTotalConnections(total)
+        })
     },[])
 
     return (
@@ -45,7 +49,7 @@ function Landing () {
                 </div>
 
                 <span className="total-connections">
-                    more than 200 connections 
+                    more than {totalConnections} connections 
                     <img src={purpleHeartIcon} alt="purple heart"/>
                 </span>
             </div>
