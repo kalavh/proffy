@@ -3,7 +3,8 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import Landing from '../MobileAndroid/src/pages/Landing'
+
+import AppStack from './src/routes/AppSatck';
 
 
 
@@ -11,7 +12,7 @@ import Landing from '../MobileAndroid/src/pages/Landing'
 const App: () => React$Node = () => {
   return (
     <>
-      <Landing/>
+      <AppStack />
       <StatusBar style="light"/>
     </>
   );
