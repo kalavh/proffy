@@ -7,7 +7,15 @@ import  './styles.css'
 import Input from '../../components/Input'
 
 function TeatcherForm() {
-    return (
+    const scheduleItems = [
+        {week_day:0 , from: '8:00 AM', to: '4:00 PM'}
+    ]
+
+    function addNewScheduleItem() {
+            console.log('teste')
+    }
+    
+        return (
         <div id="page-teacher-form" className="container">
         <PageHeader title="Thank you for teach people"
         description="Register on Proffy"/>
@@ -39,24 +47,30 @@ function TeatcherForm() {
 
                  <fieldset>
                      <legend> Hours
-                         <button type="button">+ New Hour </button>
+                         <button type="button" onClick={addNewScheduleItem}>+ New Hour </button>
                      </legend>
 
-                     <div className="schedule-item">  
-                            <Select name="week_day" label=""
-                                options={[
-                                { value: '0'  , label: 'Sunday'    },
-                                { value: '1'  , label: 'Monday'    },
-                                { value: '2'  , label: 'Tuesday'   },
-                                { value: '3'  , label: 'Wednesday' },
-                                { value: '4'  , label: 'Thursday'  },
-                                { value: '5'  , label: 'Friday'    },
-                                { value: '6'  , label: 'Saturday'  }
-                            ]} />
+                 {scheduleItems.map( scheduleItem => {
+                     return (
+                         
+                     <div key={scheduleItem.week_day} className="schedule-item">  
+                     <Select name="week_day" label=""
+                         options={[
+                         { value: '0'  , label: 'Sunday'    },
+                         { value: '1'  , label: 'Monday'    },
+                         { value: '2'  , label: 'Tuesday'   },
+                         { value: '3'  , label: 'Wednesday' },
+                         { value: '4'  , label: 'Thursday'  },
+                         { value: '5'  , label: 'Friday'    },
+                         { value: '6'  , label: 'Saturday'  }
+                     ]} />
 
-                                <Input name="from" label=" " type="time" />
-                                <Input name="to" label="" type="time" />
-                        </div>
+                         <Input name="from" label=" " type="time" />
+                         <Input name="to" label="" type="time" />
+                 </div>
+                     )
+                 })}
+
                  </fieldset>
             </fieldset>
 
