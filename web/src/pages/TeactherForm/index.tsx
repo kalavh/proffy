@@ -24,7 +24,17 @@ function TeatcherForm() {
             <fieldset>
                 <legend> About Classes </legend>
             
-                 <Select name="subject" label="subject" />
+                 <Select name="subject" label="subject"
+                 options={[
+                     {value: 'Art', label: 'Art'},
+                     {value: 'Biology', label: 'Biology'},
+                     {value: 'Chemistry', label: 'Chemistry'},
+                     {value: 'English', label: 'English'},
+                     {value: 'History', label: 'History'},
+                     {value: 'Math', label: 'Math'}
+                     
+
+                 ]} />
                  <Input name="cost" label="cost"/>
             </fieldset>
 
