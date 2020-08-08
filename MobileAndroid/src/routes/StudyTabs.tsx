@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TeacherList from '../pages/TeacherList/index';
 import Favorites from '../pages/Favorites/index';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faGraduationCap,faUserMd } from '@fortawesome/free-solid-svg-icons'
+import { faGraduationCap,faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -58,10 +58,10 @@ function StudyTabs() {
             <Screen name="TeacherList" 
             component={TeacherList}
             options={{
-                tabBarLabel: 'Proffys',
+                tabBarLabel: 'Favorites',
                 tabBarIcon: ({color,size}) => {
                     return(
-                        <FontAwesomeIcon icon={ faUserMd }
+                        <FontAwesomeIcon icon={ faHeart }
                         size={size} color={color} />
                     );
                 } 
