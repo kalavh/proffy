@@ -47,9 +47,10 @@ function StudyTabs() {
             component={Favorites}
             options={{
                 tabBarLabel: 'Proffys',
-                tabBarIcon: () => {
+                tabBarIcon: ({color,size}) => {
                     return(
-                        <FontAwesomeIcon icon={ faGraduationCap } />
+                        <FontAwesomeIcon icon={ faGraduationCap }
+                         size={size} color={color} />
                     );
                 } 
             }} />
@@ -58,9 +59,10 @@ function StudyTabs() {
             component={TeacherList}
             options={{
                 tabBarLabel: 'Proffys',
-                tabBarIcon: () => {
+                tabBarIcon: ({color,size}) => {
                     return(
-                        <FontAwesomeIcon icon={ faUserMd } />
+                        <FontAwesomeIcon icon={ faUserMd }
+                        size={size} color={color} />
                     );
                 } 
             }} />
