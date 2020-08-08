@@ -4,6 +4,7 @@ import './styles.css'
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem/indes';
 import Input from '../../components/Input';
+import Select from '../../components/Select';
 
 
 function TeacherList() {
@@ -11,7 +12,17 @@ function TeacherList() {
         <div id="page-teacher-list" className="container">
             <PageHeader title="They are our Teacther">
                <form id="search-teachers">
-                 <Input name="subject" label="subject" />
+               <Select name="subject" label="subject"
+                 options={[
+                     { value: 'Art'      , label: 'Art'       },
+                     { value: 'Biology'  , label: 'Biology'   },
+                     { value: 'Chemistry', label: 'Chemistry' },
+                     { value: 'English'  , label: 'English'   },
+                     { value: 'History'  , label: 'History'   },
+                     { value: 'Math'     , label: 'Math'      }
+                     
+
+                 ]} />
                  <Input name="week_day" label="week day"/>
                  <Input type="time"name="time" label="time"/>
                </form>
