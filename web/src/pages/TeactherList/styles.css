@@ -24,7 +24,7 @@
 
     #search-teachers {
         display: flex;
-        width:90%;
+        width:100%;
         text-align: center;
         justify-content: space-between;
         align-items: center;
@@ -32,16 +32,20 @@
 
     #time {
         position: relative;
-        bottom: 0.6rem;
-        margin-left: 2rem;
+        top: 0.6rem;
+        margin-left: 3rem;
     }
 
-    #select{
-        margin-right: rem;
+    #subject{
+        position: relative;
+        bottom: -0.6rem;
+        margin-left: 3rem;
     }
 
     #week_day{
-        margin-left: 1rem;
+        position: relative;
+        margin-left: 3rem;
+        bottom: 0.1rem;
     }
   
     #page-teacher-list main {
