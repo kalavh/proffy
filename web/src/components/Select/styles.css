@@ -37,3 +37,7 @@
     right: 1.6rem;
     bottom: 0;
 }
+
+#subject{
+    max-width: 55rem;
+}
