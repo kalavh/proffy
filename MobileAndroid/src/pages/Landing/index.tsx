@@ -14,7 +14,7 @@ function Landing() {
         <Text style= {styles.titleBold}>The app to improve your knowledge</Text> 
          </Text>
 
-         <View style={styles.buttonsContaienr}>
+         <View style={styles.buttonsContainer}>
             <TouchableOpacity 
              style={[ styles.button,styles.buttonPrimary]}>
                     <Image source={studyIcon} /> 
