@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,ScrollView } from 'react-native';
+import { View, ScrollView ,Text} from 'react-native';
 import styles from './styles'
 import PageHeader from '../../components/PageHeader';
 import TeactherItem from '../../components/TeacherItem';
@@ -8,7 +8,9 @@ function TeatcherList() {
     return (
     <View style={styles.container}>
 
-        <PageHeader title="Teatchers"/>
+        <PageHeader title="Teatchers">
+         <Text>teste</Text>
+        </PageHeader>
 
         <ScrollView 
         style={styles.teacherList}
@@ -20,6 +22,7 @@ function TeatcherList() {
             <TeactherItem/>
             <TeactherItem/>
             <TeactherItem/>
+            
         </ScrollView>
         
        

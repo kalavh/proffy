@@ -32,7 +32,7 @@ function TeactherItem() {
                 </View>
 
                 <View style={styles.buttonsContainer} >
-                    <RectButton style={styles.favoriteButton}>
+                    <RectButton style={[styles.favoriteButton,styles.favorited]}>
                         <Image source={heartOutlineIcon} />
                     </RectButton>
 
