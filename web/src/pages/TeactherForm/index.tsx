@@ -3,12 +3,15 @@ import PageHeader from '../../components/PageHeader'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import Select from '../../components/Select'
 import TextArea from '../../components/Textarea'
+import {useHistory} from 'react-router-dom' 
+
 
 import  './styles.css'
 import Input from '../../components/Input'
 import api from '../../services/api'
 
 function TeatcherForm() {
+    const history = useHistory(); 
     const [scheduleItems, setScheduleItems ] = useState([
         {week_day: 0 , from: '', to: ''}
     ]);
@@ -34,7 +37,10 @@ function TeatcherForm() {
             schedule: scheduleItems
 
         }
-        api.post('classes',obj).then(()=> { alert('Sucess')})
+        api.post('classes',obj).then(()=> {
+             alert('Sucess') 
+            history.push('/')
+            })
         .catch((err)=> {
              alert('Fail')
              console.log(obj)
