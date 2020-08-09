@@ -29,11 +29,13 @@ const styles = StyleSheet.create({
     name: {
         color: '#32264d',
         fontSize: 20,
+        marginLeft: 9,
     },
     subject: {
         color: '#6a6180',
         fontSize: 12,
-        marginTop: 4,         
+        marginTop: 4,   
+        marginLeft: 9,      
     },
     bio:{
         marginHorizontal:24,
