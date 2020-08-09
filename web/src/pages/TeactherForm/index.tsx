@@ -18,6 +18,7 @@ function TeatcherForm() {
     const [whatsapp,setWhatsapp] = useState('')
     const [subject,setSubject] = useState('')
     const [cost,setCost] = useState('')
+    const [bio,setBio] = useState('')
 
 
     function handleCreateClass(e: FormEvent) {
@@ -28,6 +29,7 @@ function TeatcherForm() {
             avatar,
             whatsapp,
             subject,
+            bio,
             cost: Number(cost),
             schedule: scheduleItems
 
@@ -86,7 +88,9 @@ function TeatcherForm() {
                   value={whatsapp}
                   onChange={(e)=>{setWhatsapp(e.target.value) }}
                   />
-                  <TextArea name="textArea" label= "About You"/>
+                  <TextArea name="textArea" label= "About You"
+                    value={bio}
+                    onChange={(e)=>{setBio(e.target.value) }}/>
                     
             </fieldset>
 
