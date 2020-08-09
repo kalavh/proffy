@@ -33,6 +33,18 @@ function TeatcherForm() {
 
     }
 
+    function setScheduleItemValue(postion: number,field: string, value: string) {
+        const newArray = scheduleItems.map(
+            (scheduleItem,index)=> {
+                if (index ===postion) {
+                    return {...scheduleItem, [field]:value };
+                }
+                else{ return scheduleItem }
+            }
+        )
+            console.log(newArray)
+    }
+
 
     function addNewScheduleItem() {
         setScheduleItems([
@@ -94,7 +106,7 @@ function TeatcherForm() {
                          <button type="button" onClick={addNewScheduleItem}>+ New Hour </button>
                      </legend>
 
-                 {scheduleItems.map( scheduleItem => {
+                 {scheduleItems.map( (scheduleItem,index) => {
                      return (
                          
                      <div key={scheduleItem.week_day} className="schedule-item">  
@@ -107,7 +119,8 @@ function TeatcherForm() {
                          { value: '4'  , label: 'Thursday'  },
                          { value: '5'  , label: 'Friday'    },
                          { value: '6'  , label: 'Saturday'  }
-                     ]} />
+                     ]} 
+                     onChange={e => setScheduleItemValue(index,'week_day',e.target.value)}/>
 
                          <Input name="from" label=" " type="time" />
                          <Input name="to" label="" type="time" />
