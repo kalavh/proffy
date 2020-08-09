@@ -3,7 +3,10 @@ import { View, ScrollView ,Text} from 'react-native';
 import styles from './styles'
 import PageHeader from '../../components/PageHeader';
 import TeactherItem from '../../components/TeacherItem';
-import { TextInput } from 'react-native-gesture-handler';
+import { TextInput, BorderlessButton } from 'react-native-gesture-handler';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faFilter } from '@fortawesome/free-solid-svg-icons'
+
 
 function TeatcherList() {
     const [isFiltersVisible,setIsVisible] = useState(false);
@@ -11,7 +14,11 @@ function TeatcherList() {
     return (
     <View style={styles.container}>
 
-        <PageHeader title="Teatchers">
+        <PageHeader title="Teatchers" headerRight={(
+         <BorderlessButton>
+           <FontAwesomeIcon icon={ faFilter }/>
+         </BorderlessButton>
+        )}>
         { isFiltersVisible && ( 
             <View style={styles.searchForm}>
             
