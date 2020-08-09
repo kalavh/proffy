@@ -2,9 +2,11 @@ import React, {useState, FormEvent} from 'react'
 import PageHeader from '../../components/PageHeader'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import Select from '../../components/Select'
+import TextArea from '../../components/Textarea'
 
 import  './styles.css'
 import Input from '../../components/Input'
+import api from '../../services/api'
 
 function TeatcherForm() {
     const [scheduleItems, setScheduleItems ] = useState([
@@ -20,17 +22,23 @@ function TeatcherForm() {
 
     function handleCreateClass(e: FormEvent) {
         e.preventDefault();
+        const obj = 
+        {
+            name,
+            avatar,
+            whatsapp,
+            subject,
+            cost: Number(cost),
+            schedule: scheduleItems
 
-        console.log(
-            {
-                name,
-                avatar,
-                whatsapp,
-                subject,
-                cost,
-                scheduleItems
-            }
-        )
+        }
+        api.post('classes',obj).then(()=> { alert('Sucess')})
+        .catch((err)=> {
+             alert('Fail')
+             console.log(obj)
+        })
+     
+
 
     }
 
@@ -78,6 +86,7 @@ function TeatcherForm() {
                   value={whatsapp}
                   onChange={(e)=>{setWhatsapp(e.target.value) }}
                   />
+                  <TextArea name="textArea" label= "About You"/>
                     
             </fieldset>
 

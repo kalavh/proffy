@@ -92,7 +92,7 @@ export default class ClassesController{
         } catch (err) {
             await trx.rollback();
             return res.status(400).json({
-                error: 'Unexpected erro while create new class'
+                error: 'Unexpected erro while create new class' + err
             })
         }
     }
