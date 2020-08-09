@@ -6,17 +6,32 @@ import TeactherItem from '../../components/TeacherItem';
 import { BorderlessButton,RectButton } from 'react-native-gesture-handler';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import api from '../../services/api';
 
 
 function TeatcherList() {
+
     const [isFiltersVisible,setIsFiltersVisible] = useState(false);
     const [subject,  setSubject ] = useState('');
     const [week_day, setWeek_day] = useState('');
-    const [ time,        setTime] = useState('');
+    const [time,         setTime] = useState('');
+    const [teacher,   setTeacher] = useState([]);
 
 
     function handleToggleFiltersVisible() {
         setIsFiltersVisible(!isFiltersVisible);
+    }
+
+   async function handleFiltesSubimit() {
+        const res = await api.get('classes', {
+            params:{ 
+                subject,
+                week_day,
+                time
+            }
+        })
+        setTeacher(res.data)
+        console.log(res.data)
     }
 
     return (
@@ -63,7 +78,7 @@ function TeatcherList() {
                 </View>
                 </View>
 
-                <RectButton style={styles.submitButton} >
+                <RectButton  onPress={handleFiltesSubimit} style={styles.submitButton} >
                      <Text style={styles.submitButtonText}>
                       Search 
                     </Text>

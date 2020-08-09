@@ -16,12 +16,14 @@ import api from '../../services/api';
     
     async function searchTeachers(ev: FormEvent) {
         ev.preventDefault();
+
         const res = await api.get('classes', {
             params: { 
                 subject,
                 week_day,
-                time}
+                time
             }
+        }
            
         )
         setTeacher(res.data)
