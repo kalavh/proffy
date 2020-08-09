@@ -9,13 +9,17 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons'
 
 
 function TeatcherList() {
-    const [isFiltersVisible,setIsVisible] = useState(false);
+    const [isFiltersVisible,setIsFiltersVisible] = useState(false);
     
+    function handleToggleFiltersVisible() {
+        setIsFiltersVisible(!isFiltersVisible);
+    }
+
     return (
     <View style={styles.container}>
 
         <PageHeader title="Teatchers" headerRight={(
-         <BorderlessButton>
+         <BorderlessButton onPress={handleToggleFiltersVisible}>
            <FontAwesomeIcon icon={ faFilter }/>
          </BorderlessButton>
         )}>

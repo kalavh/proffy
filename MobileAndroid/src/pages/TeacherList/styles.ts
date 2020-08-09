@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     inputBlock: {
         width: '48%'
     },
+ 
 })
 
 export default styles
