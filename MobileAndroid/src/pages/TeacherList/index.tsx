@@ -8,7 +8,9 @@ function TeatcherList() {
     return (
     <View style={styles.container}>
         <PageHeader title="Teatchers"/>
-        <ScrollView>
+        <ScrollView 
+        style={styles.teacherList}
+        >
             <TeactherItem/>
             <TeactherItem/>
             <TeactherItem/>
