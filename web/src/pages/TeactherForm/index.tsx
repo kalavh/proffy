@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, FormEvent} from 'react'
 import PageHeader from '../../components/PageHeader'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import Select from '../../components/Select'
@@ -11,6 +11,28 @@ function TeatcherForm() {
         {week_day: 0 , from: '', to: ''}
     ]);
   
+    const [name,setName] = useState('')
+    const [avatar,setAvatar] = useState('')
+    const [whatsapp,setWhatsapp] = useState('')
+    const [subject,setSubject] = useState('')
+    const [cost,setCost] = useState('')
+
+
+    function handleCreateClass(e: FormEvent) {
+        e.preventDefault();
+
+        console.log(
+            {
+                name,
+                avatar,
+                whatsapp,
+                subject,
+                cost
+            }
+        )
+
+    }
+
 
     function addNewScheduleItem() {
         setScheduleItems([
@@ -25,11 +47,24 @@ function TeatcherForm() {
         description="Register on Proffy"/>
 
         <main>
+            <form onSubmit={handleCreateClass}>
             <fieldset>
                 <legend> Your data</legend>
-                 <Input name="name" label="name" />
-                 <Input name="avatar" label="avatar"/>
-                 <Input name="whatsapp" label="whatsapp"/>
+                 <Input name="name"
+                  label="name" 
+                  value={name}
+                  onChange={(e)=>{setName(e.target.value) }}
+                  />
+                 <Input
+                  name="avatar" 
+                 label="avatar" 
+                 value={avatar}
+                 onChange={(e)=>{setAvatar(e.target.value) }}/>
+                 <Input name="whatsapp"
+                  label="whatsapp"
+                  value={whatsapp}
+                  onChange={(e)=>{setWhatsapp(e.target.value) }}
+                  />
                     
             </fieldset>
 
@@ -46,8 +81,13 @@ function TeatcherForm() {
                      { value: 'Math'     , label: 'Math'      }
                      
 
-                 ]} />
-                 <Input name="cost" label="cost(Hour)"/>
+                 ]} 
+                 value={subject}
+                 onChange={(e)=>{ setSubject(e.target.value)}}
+                 />
+                 <Input name="cost" label="cost(Hour)"
+                 value={cost}
+                 onChange={(e)=>{ setCost(e.target.value)}}/>
 
                  <fieldset>
                      <legend> Hours
@@ -86,9 +126,9 @@ function TeatcherForm() {
                 Warning<br/>
                 You need to put all data
             </p>
-            <button type="button"> Save </button>
+            <button type="submit"> Save </button>
         </footer>
-
+         </form >
         </main>
     </div>
     )
