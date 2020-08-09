@@ -16,6 +16,7 @@ function TeatcherList() {
             <TextInput 
              style={styles.input}
              placeholder='Choose Subject'
+             placeholderTextColor='#c1bccc'
             />
 
             <View style={styles.inputGroup}>
@@ -24,6 +25,7 @@ function TeatcherList() {
                 <TextInput 
                 style={styles.input}
                 placeholder='Choose WeekDay'
+                placeholderTextColor='#c1bccc'
                 />
               </View>
 
@@ -32,6 +34,7 @@ function TeatcherList() {
                 <TextInput 
                 style={styles.input}
                 placeholder='Choose Time'
+                placeholderTextColor='#c1bccc'
                 />
               </View>
 
