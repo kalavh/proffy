@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, ScrollView ,Text} from 'react-native';
+import { View, ScrollView ,Text,TextInput } from 'react-native';
 import styles from './styles'
 import PageHeader from '../../components/PageHeader';
 import TeactherItem from '../../components/TeacherItem';
-import { TextInput, BorderlessButton } from 'react-native-gesture-handler';
+import { BorderlessButton,RectButton } from 'react-native-gesture-handler';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
 
@@ -51,8 +51,14 @@ function TeatcherList() {
                     placeholderTextColor='#c1bccc'
                     />
                 </View>
-
                 </View>
+
+                <RectButton style={styles.submitButton} >
+                     <Text style={styles.submitButtonText}>
+                      Search 
+                    </Text>
+                </RectButton>
+
             </View>
             )}
             </PageHeader>
