@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fafafc',
         padding: 24,
         alignItems: 'center',
+        marginTop:24,
 
     },
     price: {
