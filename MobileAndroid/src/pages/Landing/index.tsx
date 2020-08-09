@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {View,Text,Image} from 'react-native'
-import {useNavigation, NavigationHelpersContext} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 import LandingImg from '../../images/landing.png';
 import studyIcon from '../../images/icons/study.png';
@@ -8,13 +8,24 @@ import giveClassesIcon from '../../images/icons/give-classes.png';
 import heartIcon from '../../images/icons/heart.png'
 import styles from './styles';
 import { RectButton } from 'react-native-gesture-handler'
-
+import api from '../../services/api'
 
 
 
 
 
 function Landing() {
+    const [totalConnections,setTotalConnections] = useState(0)
+         
+    useEffect(()=>{
+        api.get('connections')
+        .then((res) => { 
+            const {total} = res.data;
+
+            setTotalConnections(total)
+        }).catch( err => { console.log('error count connections ' +err)} )
+    },[])
+
     const navigation = useNavigation();
 
     function handleNavigateToGiveClassesPages() {
@@ -51,7 +62,7 @@ function Landing() {
          </View>
 
          <Text style={styles.totalConnections}>
-                999 Connections {' '}
+                {totalConnections +'  '}Connections {' '}
                 <Image source={heartIcon} />
             </Text>
         </View>
