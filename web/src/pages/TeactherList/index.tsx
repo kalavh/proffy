@@ -4,16 +4,25 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem/indes';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+import api from '../../services/api';
 
 
-function TeacherList() {
+ function TeacherList() {
     const [ subject, setSubject ] = useState('')
     const [ week_day, setWeek_day ] = useState('')
     const [ time, setTime ] = useState('')
     
-    function searchTeachers(ev: FormEvent) {
+    async function searchTeachers(ev: FormEvent) {
         ev.preventDefault();
-
+        const res = await api.get('classes', {
+            params: { 
+                subject,
+                week_day,
+                time}
+            }
+           
+        )
+        console.log(res.data)
     }
 
 
