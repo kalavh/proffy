@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView ,Text,TextInput } from 'react-native';
 import styles from './styles'
 import PageHeader from '../../components/PageHeader';
-import TeactherItem from '../../components/TeacherItem';
+import TeactherItem,{Teacher} from '../../components/TeacherItem';
 import { BorderlessButton,RectButton } from 'react-native-gesture-handler';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
@@ -15,7 +15,7 @@ function TeatcherList() {
     const [subject,  setSubject ] = useState('');
     const [week_day, setWeek_day] = useState('');
     const [time,         setTime] = useState('');
-    const [teacher,   setTeacher] = useState([]);
+    const [teachers,   setTeachers] = useState([]);
 
 
     function handleToggleFiltersVisible() {
@@ -30,8 +30,9 @@ function TeatcherList() {
                 time
             }
         })
-        setTeacher(res.data)
+        setTeachers(res.data)
         console.log(res.data)
+        setIsFiltersVisible(false)
     }
 
     return (
@@ -94,10 +95,10 @@ function TeatcherList() {
                 paddingHorizontal:16,
                 paddingBottom:24,
             }}>
-                <TeactherItem/>
-                <TeactherItem/>
-                <TeactherItem/>
-                <TeactherItem/>
+                {teachers.map((teacher: Teacher) => {
+                    <TeactherItem key={teacher.id} teacher={teacher} />
+                })}
+             
                 
             </ScrollView>
             
