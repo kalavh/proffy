@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#eee'
     },
 
-    profileInfo: {
+    proFileInfo: {
         marginLeft: 16
     },
 
