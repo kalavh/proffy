@@ -1,13 +1,15 @@
 import React,{useState, FormEvent} from 'react';
 import './styles.css'
 import PageHeader from '../../components/PageHeader';
-import TeacherItem from '../../components/TeacherItem/indes';
+import TeacherItem,{ Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 import api from '../../services/api';
 
 
+
  function TeacherList() {
+    const [ teachers, setTeacher ] = useState([])
     const [ subject, setSubject ] = useState('')
     const [ week_day, setWeek_day ] = useState('')
     const [ time, setTime ] = useState('')
@@ -22,7 +24,7 @@ import api from '../../services/api';
             }
            
         )
-        console.log(res.data)
+        setTeacher(res.data)
     }
 
 
@@ -42,6 +44,7 @@ import api from '../../services/api';
                     value={subject}
                     onChange={ (ev) => { setSubject(ev.target.value) } }
                     />
+
                      <Select name="week_day" label="week"
                     options={[
                         { value: '0'  , label: 'Sunday'    },
@@ -53,7 +56,7 @@ import api from '../../services/api';
                         { value: '6'  , label: 'Saturday'  }
                     ]} 
                     value={week_day}
-                      onChange={(ev)=>{setWeek_day(ev.target.value) }}
+                      onChange={ (ev)=> { setWeek_day(ev.target.value) }}
                       />
                     <Input type="time"name="time" label="time"
                       value={time}
@@ -62,12 +65,10 @@ import api from '../../services/api';
                </form>
             </PageHeader>
         <main>
-            <TeacherItem/>
-            <TeacherItem/>
-            <TeacherItem/>
-            <TeacherItem/>
-            <TeacherItem/>
-            <TeacherItem/>
+            {teachers.map((teacher: Teacher) => {
+                return <TeacherItem key={teacher.id} teacher={teacher} />
+            }) }
+
         </main>
           
         </div>
