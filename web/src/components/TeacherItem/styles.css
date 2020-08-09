@@ -75,6 +75,9 @@
     justify-content: center;
     transition: 0.2s;
 }
+img{
+  margin-left: 2rem;
+}
 
 
 teacher-item footer button:hover{
@@ -86,3 +89,10 @@ teacher-item footer button:hover{
   margin: 0 1.4rem;
 }
 
+@media(min-width: 700px) {
+    .teacher-item header,
+    .teacher-item footer {
+        padding: 3.2rem;
+    }
+    
+}
