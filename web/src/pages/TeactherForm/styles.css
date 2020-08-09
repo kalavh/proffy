@@ -131,6 +131,7 @@
     #page-teacher-form main fieldset {
         padding: 1rem;
         margin-top: 1rem;
+        border-width: 0;
     }
 
     #page-teacher-form main footer {
