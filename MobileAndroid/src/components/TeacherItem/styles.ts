@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -27,7 +27,66 @@ const styles = StyleSheet.create({
     },
 
     name: {
-        color: '#32264d'
+        color: '#32264d',
+        fontSize: 20,
+    },
+    subject: {
+        color: '#6a6180',
+        fontSize: 12,
+        marginTop: 4,         
+    },
+    bio:{
+        marginHorizontal:24,
+        fontSize: 14,
+        lineHeight: 24,
+        color: '#6a6180',
+
+
+    },
+    footer: {
+        backgroundColor: '#fafafc',
+        padding: 24,
+        alignItems: 'center',
+
+    },
+    price: {
+        color: '#6a6180',
+        fontSize: 14,
+    },
+    priceValue: {
+        color: '#8257e5',
+        fontSize: 16,
+        marginLeft: 16,
+    },
+    buttonsContainer: {
+        flexDirection: 'row',
+        marginTop: 16,
+    },
+    favoriteButton: {
+        backgroundColor: '#8257e5',
+        width: 56,
+        height: 56,
+        marginLeft: 15,
+        borderRadius: 8 ,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    contactButton: {
+        backgroundColor: '#04d361',
+        flex: 1,
+        height: 56,
+        marginLeft: 15,
+        marginRight: 15,
+        flexDirection: 'row',
+        borderRadius: 8 ,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    contactButttonText: {
+        color: '#fff',
+        fontSize: 16,
+        marginLeft: 16,
+
     }
 })
 
