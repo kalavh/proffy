@@ -10,7 +10,11 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons'
 
 function TeatcherList() {
     const [isFiltersVisible,setIsFiltersVisible] = useState(false);
-    
+    const [subject,  setSubject ] = useState('');
+    const [week_day, setWeek_day] = useState('');
+    const [ time,        setTime] = useState('');
+
+
     function handleToggleFiltersVisible() {
         setIsFiltersVisible(!isFiltersVisible);
     }
@@ -31,6 +35,8 @@ function TeatcherList() {
                 style={styles.input}
                 placeholder='Choose Subject'
                 placeholderTextColor='#c1bccc'
+                value={subject}
+                onChangeText={(text)=> { setSubject(text)}}
                 />
 
                 <View style={styles.inputGroup}>
@@ -40,6 +46,8 @@ function TeatcherList() {
                     style={styles.input}
                     placeholder='Choose WeekDay'
                     placeholderTextColor='#c1bccc'
+                    value={week_day}
+                    onChangeText={(text)=> { setWeek_day(text)}}
                     />
                 </View>
 
@@ -49,6 +57,8 @@ function TeatcherList() {
                     style={styles.input}
                     placeholder='Choose Time'
                     placeholderTextColor='#c1bccc'
+                    value={time}
+                    onChangeText={(text)=> { setTime(text)}}
                     />
                 </View>
                 </View>
